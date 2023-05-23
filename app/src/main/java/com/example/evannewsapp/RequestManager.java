@@ -16,6 +16,10 @@ import retrofit2.http.Query;
 public class RequestManager {
     Context context;
 
+    public RequestManager(Context context) {
+        this.context = context;
+    }
+
     Retrofit retrofit = new Retrofit.Builder()
             .baseUrl("https://newsapi.org/v2/")
             .addConverterFactory(GsonConverterFactory.create())
@@ -45,10 +49,6 @@ public class RequestManager {
         catch (Exception e){
             e.printStackTrace();
         }
-    }
-
-    public RequestManager(Context context) {
-        this.context = context;
     }
 
     public interface CallNewsApi {

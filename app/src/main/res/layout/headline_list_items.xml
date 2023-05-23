@@ -27,7 +27,6 @@
                 android:maxLines="3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
             </TextView>
             <TextView
                 android:id="@+id/text_source"
@@ -38,7 +37,6 @@
                 android:layout_marginTop="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
-
             </TextView>
         </LinearLayout>
         <ImageView
@@ -48,7 +46,6 @@
             android:scaleType="centerCrop"
             android:layout_width="0dp"
             android:layout_height="match_parent">
-
         </ImageView>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -4,8 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import com.squareup.picasso.Picasso;
 
@@ -38,7 +41,6 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
 
         if(headlines.get(position).getUrlToImage() != null){
             Picasso.get().load(headlines.get(position).getUrlToImage()).into(holder.img_headline);
-
         }
 
         holder.cardView.setOnClickListener(new View.OnClickListener() {
@@ -52,5 +54,20 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomViewHolder> {
     @Override
     public int getItemCount() {
         return headlines.size();
+    }
+}
+
+class CustomViewHolder extends RecyclerView.ViewHolder {
+    TextView text_title, text_source;
+    ImageView img_headline;
+    CardView cardView;
+
+    public CustomViewHolder(@NonNull View itemView) {
+        super(itemView);
+
+        text_title = itemView.findViewById(R.id.text_title);
+        text_source = itemView.findViewById(R.id.text_source);
+        img_headline = itemView.findViewById(R.id.img_headline);
+        cardView = itemView.findViewById(R.id.main_container);
     }
 }
